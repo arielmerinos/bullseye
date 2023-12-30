@@ -8,59 +8,50 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var bullseyeValue: Double = 50.0
-    @State var randomEye: Int = Int.random(in: 1...100)
-    var body: some View {
-        ZStack{
-            VStack{
-                Button{
-                    withAnimation{
-                        randomEye = Int.random(in: 1...100)
-                    }
-                } label: {
-                    Label(
-                        title: { Text("Restart") },
-                        icon: { Image(systemName: "arrow.clockwise") }
-                    )
-                }
-                .symbolEffect(.bounce, value: randomEye)	
-                .position(x: 40.0, y: 20.0)
-                .buttonStyle(.bordered)
-                .padding()
-
-            }
-            VStack {
-                Text("Put the bullseye as close as you can to!")
-                Text("🎯🎯🎯")
-                Text("\(randomEye)")
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .padding(.vertical)
-                    .contentTransition(.numericText())
-                HStack(alignment: .center){
-                    Text("0")
-                        .padding(8)
-                    Slider(value: $bullseyeValue , in: 1...100)
-                    Text("100")
-                        .padding(1)
-                }
-                Text("\(Int(bullseyeValue))")
-                Button{
-                    
-                } label: {
-                    Text("Go!")
-                        .fontWeight(.heavy)
-                        .font(.callout)
-                }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                
-            }
-            .padding()
-        }
+  
+  @State private var bullseyeValue: Double = 50.0
+  @State private var alertIsVisible: Bool = false
+  @State private var randomEye: Int = Int.random(in: 1...100)
+  
+  
+  var body: some View {
+    VStack{
+      Text("🎯🎯🎯")
+        .font(Font.system(size: 78, weight: .black))
+        .padding(.bottom)
+      Text("PUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
+      .fontWeight(.bold)
+      .multilineTextAlignment(.center)
+      .lineSpacing(6)
+      .kerning(2.0)
+      Text("89")
+        .font(.largeTitle)
+        .fontWeight(.heavy)
+      HStack{
+        Text("1")
+          .font(.callout)
+          .padding()
+          .fontWeight(.bold)
+        Slider(value: .constant(50), in: 1...100)
+        Text("100")
+          .padding()
+          .font(.callout)
+          .fontWeight(.bold)
+      }
+      Button("Hit me") {
+        print("Click on the buttonf")
+        alertIsVisible.toggle()
+        print(alertIsVisible)
+      }.buttonStyle(.bordered)
+        .alert(LocalizedStringKey(
+          stringLiteral: "You won\n 🥰"), isPresented: $alertIsVisible, actions: { Button{} label: {
+            Text("It's ok to cry")
+              .fontWeight(.black)
+          } } )
     }
+  }
 }
 
 #Preview {
-    ContentView(bullseyeValue: 50.0   )
+  ContentView()
 }
