@@ -14,7 +14,7 @@ struct InstructionsText: View {
 		Spacer()
 		Text("🎯🎯🎯")
 			.foregroundStyle(.textViews)
-			.font(Font.system(size: 78, weight: .black))
+			.font(Font.system(size: 68, weight: .black))
 			.padding(.bottom)
 		Text("Put the bullseye as close as you can to")
 			.foregroundStyle(.textViews)

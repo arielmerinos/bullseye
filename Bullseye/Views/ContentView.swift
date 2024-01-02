@@ -21,10 +21,6 @@ struct ContentView: View {
 
 		ZStack(alignment:.topLeading){
 			BackgroundView(game: $game)
-			
-			Image(.pattern)
-				.rotationEffect(.degrees(90))
-				.ignoresSafeArea()
 				
 			VStack{
 				InstructionsText(game: $game)

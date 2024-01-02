@@ -12,15 +12,18 @@ struct BackgroundView: View {
 	@Binding var game: Game
 	
 	
-    var body: some View {
-		VStack{
-			TopView(game: $game)
-			Spacer()
-			BottomView(game: $game, round: $game.round)
+	var body: some View {
+		ZStack{
+			RingsView()
+			
+			VStack{
+				TopView(game: $game)
+				Spacer()
+				BottomView(game: $game, round: $game.round)
+			}
+			.padding()
 		}
-		.padding()
-		.background(.bckgnd)
-    }
+	}
 }
 
 
@@ -57,6 +60,30 @@ struct BottomView: View {
 	}
 }
 
+struct RingsView: View{
+	
+	
+	var body: some View{
+
+		ZStack{
+			Color.bckgnd.ignoresSafeArea()
+			ForEach(1..<5){ ring in
+				Circle()
+					.stroke(lineWidth: 30)
+					.fill(
+						RadialGradient(colors: [.white.opacity(0.8 * 0.3), .white.opacity(0)], center: .center, startRadius: 0, endRadius: 500)
+					)
+					.frame(width: CGFloat(100 * ring), height: CGFloat(100 * ring))
+				
+				
+			}
+		}
+	}
+}
+
 #Preview {
 	BackgroundView(game: .constant(Game()))
+}
+#Preview("Rings view"){
+	RingsView()
 }
