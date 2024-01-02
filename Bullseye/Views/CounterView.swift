@@ -9,26 +9,26 @@ import SwiftUI
 
 struct CounterView: View {
 	@Binding var points: Int
+	var caption: String
 	
     var body: some View {
 		VStack{
 			Text("\(points)")
-				.foregroundStyle(.white)
 				.fontWeight(.black)
 				.contentTransition(.numericText(countsDown: true))
 				.font(.title)
-			Text("Points")
+			Text(caption)
 				.font(.caption2)
-				.foregroundStyle(.white)
 		}
 		.frame(width: 90, height: 50)
-		.background(Color.hitmebutton)
+		.background(.roundedButton)
+		.foregroundStyle(.roundedText)
 		.clipShape(RoundedRectangle(cornerRadius: 25))
 		.zIndex(1)
     }
 }
 
 #Preview {
-	CounterView(points: .constant(430))
+	CounterView(points: .constant(430), caption: "Points")
 }
 

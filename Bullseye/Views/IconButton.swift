@@ -8,25 +8,26 @@
 
 import SwiftUI
 
-struct LeaderboardButton: View {
+struct IconButton: View {
+	var iconName: String
 	
 	var body: some View {
 		VStack{
-			Image(systemName: "list.bullet")
-				.foregroundStyle(.white)
-				.fontWeight(.black)
+			Image(systemName: iconName)
+				.foregroundStyle(.roundedText)
+				.fontWeight(.bold)
 				.contentTransition(.numericText(countsDown: true))
 				.font(.title)
 		}
 		.frame(width: 90, height: 50)
-		.background(Color.hitmebutton)
+		.background(Color.roundedButton)
 		.clipShape(RoundedRectangle(cornerRadius: 25))
 		.zIndex(1)
 	}
 }
 
 #Preview {
-	LeaderboardButton()
+	IconButton(iconName: "list.bullet")
 }
 
 

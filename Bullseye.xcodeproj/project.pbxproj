@@ -20,7 +20,9 @@
 		B03090742B42133A00E26A67 /* RestartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03090732B42133A00E26A67 /* RestartButtonView.swift */; };
 		B03090762B42137500E26A67 /* HitMeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03090752B42137500E26A67 /* HitMeButtonView.swift */; };
 		B03090782B42164F00E26A67 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03090772B42164F00E26A67 /* Shapes.swift */; };
-		B030907A2B42451600E26A67 /* LeaderboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03090792B42451600E26A67 /* LeaderboardButton.swift */; };
+		B030907A2B42451600E26A67 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03090792B42451600E26A67 /* IconButton.swift */; };
+		B030907C2B437C5C00E26A67 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030907B2B437C5C00E26A67 /* BackgroundView.swift */; };
+		B030907E2B439F8300E26A67 /* ScoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030907D2B439F8300E26A67 /* ScoreButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,9 @@
 		B03090732B42133A00E26A67 /* RestartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartButtonView.swift; sourceTree = "<group>"; };
 		B03090752B42137500E26A67 /* HitMeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitMeButtonView.swift; sourceTree = "<group>"; };
 		B03090772B42164F00E26A67 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
-		B03090792B42451600E26A67 /* LeaderboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardButton.swift; sourceTree = "<group>"; };
+		B03090792B42451600E26A67 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		B030907B2B437C5C00E26A67 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		B030907D2B439F8300E26A67 /* ScoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +132,9 @@
 				B03090732B42133A00E26A67 /* RestartButtonView.swift */,
 				B03090752B42137500E26A67 /* HitMeButtonView.swift */,
 				B03090772B42164F00E26A67 /* Shapes.swift */,
-				B03090792B42451600E26A67 /* LeaderboardButton.swift */,
+				B03090792B42451600E26A67 /* IconButton.swift */,
+				B030907B2B437C5C00E26A67 /* BackgroundView.swift */,
+				B030907D2B439F8300E26A67 /* ScoreButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,12 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B030907E2B439F8300E26A67 /* ScoreButtonView.swift in Sources */,
 				B03090492B4061F400E26A67 /* ContentView.swift in Sources */,
-				B030907A2B42451600E26A67 /* LeaderboardButton.swift in Sources */,
+				B030907A2B42451600E26A67 /* IconButton.swift in Sources */,
 				B03090472B4061F400E26A67 /* BullseyeApp.swift in Sources */,
 				B03090552B4095AE00E26A67 /* SwiftUIView.swift in Sources */,
 				B03090762B42137500E26A67 /* HitMeButtonView.swift in Sources */,
 				B030905A2B40FF0F00E26A67 /* Game.swift in Sources */,
+				B030907C2B437C5C00E26A67 /* BackgroundView.swift in Sources */,
 				B030906E2B420E5A00E26A67 /* TextView.swift in Sources */,
 				B03090702B42100A00E26A67 /* CounterView.swift in Sources */,
 				B03090782B42164F00E26A67 /* Shapes.swift in Sources */,

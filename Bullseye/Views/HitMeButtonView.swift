@@ -10,7 +10,6 @@ import SwiftUI
 struct HitMeButtonView: View {
 	@Binding var alertIsVisible: Bool
 	@Binding var bullseyeValue: Double
-	@Binding var points: Int
 	@Binding var game: Game
 	
 	var gameStatus  = "I'm going back!"
@@ -61,7 +60,8 @@ struct HitMeButtonView: View {
 			actions: {
 				Button{
 					withAnimation{
-						points = points + game.points(sliderValue: Int(bullseyeValue))
+						game.score += game.points(sliderValue: Int(bullseyeValue))
+						game.round += 1
 					}
 					withAnimation{
 						game.target = Int.random(in: 3...97)
@@ -71,7 +71,8 @@ struct HitMeButtonView: View {
 					Text(gameStatus)
 						.fontWeight(.black)
 						.bold()
-				} }
+				}
+			}
 		)
     }
 }

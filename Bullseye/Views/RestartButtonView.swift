@@ -19,10 +19,15 @@ struct RestartButtonView: View {
 			Label("", systemImage: "arrow.counterclockwise")
 				.labelStyle(.iconOnly)
 		}
+		.frame(width: 40, height: 40)
 		.contentTransition(.symbolEffect(.replace))
-		.buttonStyle(.bordered)
-		Spacer()
-
+		.background(.hitmebutton)
+		.font(.title3)
+		.foregroundStyle(.white)
+		.clipShape(Circle())
     }
 }
 
+#Preview {
+	RestartButtonView(game: .constant(Game()))
+}
