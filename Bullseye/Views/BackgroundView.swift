@@ -46,7 +46,9 @@ struct BottomView: View {
 	var body: some View {
 		HStack{
 			IconButton(iconName: "arrow.counterclockwise").onTapGesture {
-				game.restart()
+				withAnimation{
+					game.restart()
+				}
 			}
 			Spacer()
 			CounterView(points: $game.round, caption: "Round")
