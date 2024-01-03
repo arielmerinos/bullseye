@@ -20,13 +20,11 @@ struct HitMeButtonView: View {
 	
     var body: some View {
 		
-		let quote = """
-		 \(Int(bullseyeValue)) casi es \(game.target)
-		 \(messageContest(status: isWinner, points: game.points(sliderValue: Int(bullseyeValue))))
-		 """
-		
 		Button {
-			alertIsVisible.toggle()
+			withAnimation{
+				
+				alertIsVisible.toggle()
+			}
 		} label: {
 			Label("Hit me!", systemImage: alertIsVisible ? "circle" : "circle.fill")
 				.bold()
@@ -53,26 +51,6 @@ struct HitMeButtonView: View {
 		.overlay(
 			RoundedRectangle(cornerRadius: 16)
 				.strokeBorder(.white, lineWidth: 3.0)
-		)
-		.alert(
-			quote,
-			isPresented: $alertIsVisible,
-			actions: {
-				Button{
-					withAnimation{
-						game.score += game.points(sliderValue: Int(bullseyeValue))
-						game.round += 1
-					}
-					withAnimation{
-						game.target = Int.random(in: 3...97)
-					}
-					
-				} label: {
-					Text(gameStatus)
-						.fontWeight(.black)
-						.bold()
-				}
-			}
 		)
     }
 }

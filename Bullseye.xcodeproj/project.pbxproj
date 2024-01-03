@@ -23,6 +23,7 @@
 		B030907A2B42451600E26A67 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03090792B42451600E26A67 /* IconButton.swift */; };
 		B030907C2B437C5C00E26A67 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030907B2B437C5C00E26A67 /* BackgroundView.swift */; };
 		B030907E2B439F8300E26A67 /* ScoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030907D2B439F8300E26A67 /* ScoreButtonView.swift */; };
+		B03090802B45123D00E26A67 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030907F2B45123D00E26A67 /* PointsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B03090792B42451600E26A67 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		B030907B2B437C5C00E26A67 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		B030907D2B439F8300E26A67 /* ScoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreButtonView.swift; sourceTree = "<group>"; };
+		B030907F2B45123D00E26A67 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				B03090792B42451600E26A67 /* IconButton.swift */,
 				B030907B2B437C5C00E26A67 /* BackgroundView.swift */,
 				B030907D2B439F8300E26A67 /* ScoreButtonView.swift */,
+				B030907F2B45123D00E26A67 /* PointsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				B030906E2B420E5A00E26A67 /* TextView.swift in Sources */,
 				B03090702B42100A00E26A67 /* CounterView.swift in Sources */,
 				B03090782B42164F00E26A67 /* Shapes.swift in Sources */,
+				B03090802B45123D00E26A67 /* PointsView.swift in Sources */,
 				B03090742B42133A00E26A67 /* RestartButtonView.swift in Sources */,
 				B03090722B42119D00E26A67 /* SliderView.swift in Sources */,
 			);

@@ -19,14 +19,23 @@ struct ContentView: View {
 	
 	var body: some View {
 
-		ZStack(alignment:.topLeading){
+		ZStack{
 			BackgroundView(game: $game)
 				
 			VStack{
 				InstructionsText(game: $game)
+					.padding(.bottom, alertIsVisible ? 0 : 100 )
+				if alertIsVisible{
+					PointsView(game: $game, alertIsVisible: $alertIsVisible, bullseyeValue: $bullseyeValue)
+				} else {
+					HitMeButtonView(alertIsVisible:$alertIsVisible, bullseyeValue: $bullseyeValue, game: $game)
+				}
+//				Spacer()
+			}
+			if !alertIsVisible{
+				
 				SliderView(bullseyeValue: $bullseyeValue)
-				HitMeButtonView(alertIsVisible:$alertIsVisible, bullseyeValue: $bullseyeValue, game: $game)
-				Spacer()
+					.padding(.top, 100)
 			}
 		}
 	}
