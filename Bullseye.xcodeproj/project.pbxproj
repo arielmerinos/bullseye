@@ -24,6 +24,9 @@
 		B030907C2B437C5C00E26A67 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030907B2B437C5C00E26A67 /* BackgroundView.swift */; };
 		B030907E2B439F8300E26A67 /* ScoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030907D2B439F8300E26A67 /* ScoreButtonView.swift */; };
 		B03090802B45123D00E26A67 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030907F2B45123D00E26A67 /* PointsView.swift */; };
+		B0E8F7682B45BEA4007D4E16 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E8F7672B45BEA4007D4E16 /* Constants.swift */; };
+		B0E8F76A2B45C1AB007D4E16 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E8F7692B45C1AB007D4E16 /* RowView.swift */; };
+		B0E8F76C2B45D0A3007D4E16 /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E8F76B2B45D0A3007D4E16 /* LeaderBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		B030907B2B437C5C00E26A67 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		B030907D2B439F8300E26A67 /* ScoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreButtonView.swift; sourceTree = "<group>"; };
 		B030907F2B45123D00E26A67 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
+		B0E8F7672B45BEA4007D4E16 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B0E8F7692B45C1AB007D4E16 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		B0E8F76B2B45D0A3007D4E16 /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				B03090592B40FF0F00E26A67 /* Game.swift */,
+				B0E8F7672B45BEA4007D4E16 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +145,8 @@
 				B030907B2B437C5C00E26A67 /* BackgroundView.swift */,
 				B030907D2B439F8300E26A67 /* ScoreButtonView.swift */,
 				B030907F2B45123D00E26A67 /* PointsView.swift */,
+				B0E8F7692B45C1AB007D4E16 /* RowView.swift */,
+				B0E8F76B2B45D0A3007D4E16 /* LeaderBoardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,13 +271,16 @@
 				B030907E2B439F8300E26A67 /* ScoreButtonView.swift in Sources */,
 				B03090492B4061F400E26A67 /* ContentView.swift in Sources */,
 				B030907A2B42451600E26A67 /* IconButton.swift in Sources */,
+				B0E8F76C2B45D0A3007D4E16 /* LeaderBoardView.swift in Sources */,
 				B03090472B4061F400E26A67 /* BullseyeApp.swift in Sources */,
 				B03090552B4095AE00E26A67 /* SwiftUIView.swift in Sources */,
+				B0E8F7682B45BEA4007D4E16 /* Constants.swift in Sources */,
 				B03090762B42137500E26A67 /* HitMeButtonView.swift in Sources */,
 				B030905A2B40FF0F00E26A67 /* Game.swift in Sources */,
 				B030907C2B437C5C00E26A67 /* BackgroundView.swift in Sources */,
 				B030906E2B420E5A00E26A67 /* TextView.swift in Sources */,
 				B03090702B42100A00E26A67 /* CounterView.swift in Sources */,
+				B0E8F76A2B45C1AB007D4E16 /* RowView.swift in Sources */,
 				B03090782B42164F00E26A67 /* Shapes.swift in Sources */,
 				B03090802B45123D00E26A67 /* PointsView.swift in Sources */,
 				B03090742B42133A00E26A67 /* RestartButtonView.swift in Sources */,

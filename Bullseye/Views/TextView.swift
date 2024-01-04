@@ -58,7 +58,7 @@ struct ButtonText: View {
 			.background(.slider)
 			.foregroundStyle(.white)
 			.fontWeight(.bold)
-			.clipShape(RoundedRectangle(cornerRadius: 12))
+			.clipShape(RoundedRectangle(cornerRadius: Constants.General.cornerRadius))
 	}
 }
 
@@ -95,7 +95,7 @@ struct CustomAlert: View {
 			LabelText(text: "The slider's value is")
 				.font(.title3)
 			BigNumberValue(game: $bullseyeValue)
-			LabelText(text: "You scored 200 points")
+			LabelText(text: "You scored \(game.points(sliderValue: Int(bullseyeValue))) points")
 			Button{
 				withAnimation{
 					game.score += game.points(sliderValue: Int(bullseyeValue))
@@ -112,6 +112,21 @@ struct CustomAlert: View {
 	}
 }
 
+struct RoundedTextView: View{
+	@Binding var text: String
+	
+	var body: some View{
+		Text("hi")
+			.font(.title3)
+			.frame(width: 58, height: 58)
+			.overlay{
+				Circle()
+					.stroke(.leaderboardRow ,lineWidth: 3.0)
+			}
+	}
+}
+
+
 #Preview{
 	
 	CustomAlert(bullseyeValue: .constant(50), game: .constant(Game()), alertIsVisible: .constant(true) )
@@ -119,4 +134,8 @@ struct CustomAlert: View {
 
 #Preview{
 	InstructionsText(game: .constant(Game()))
+}
+
+#Preview("RoundedText"){
+	RoundedTextView(text: .constant("si"))
 }

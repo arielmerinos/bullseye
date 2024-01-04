@@ -45,11 +45,11 @@ struct HitMeButtonView: View {
 		.background(
 			Color.hitmebutton
 		)
-		.clipShape(RoundedRectangle(cornerRadius: 16))
+		.clipShape(RoundedRectangle(cornerRadius: Constants.General.cornerRadius))
 		.foregroundStyle(.white)
 		.contentTransition(.symbolEffect(.replace))
 		.overlay(
-			RoundedRectangle(cornerRadius: 16)
+			RoundedRectangle(cornerRadius: Constants.General.cornerRadius)
 				.strokeBorder(.white, lineWidth: 3.0)
 		)
     }
