@@ -9,8 +9,23 @@ import SwiftUI
 
 struct LeaderBoardView: View {
     var body: some View {
-        RowView(index: 1, score: 10, date: Date())
+		VStack(spacing: 10){
+			HeaderView()
+			RowView(index: 1, score: 10, date: Date())
+		}
     }
+}
+
+struct HeaderView: View {
+	var body: some View {
+		ZStack {
+			BigBoldText(text: "leaderboard")
+			HStack{
+				Spacer()
+				Text("x")
+			}
+		}
+	}
 }
 
 #Preview {

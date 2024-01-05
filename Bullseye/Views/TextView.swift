@@ -22,7 +22,7 @@ struct InstructionsText: View {
 				.textCase(.uppercase)
 				.multilineTextAlignment(.center)
 				.lineSpacing(6)
-				.kerning(2.0)
+				.kerning(Constants.General.kerning)
 				.padding(.horizontal)
 			BigNumber(game: $game)
 		}
@@ -34,7 +34,7 @@ struct LabelText: View {
 	
 	var body: some View{
 		Text(text.uppercased())
-			.kerning(1.5)
+			.kerning(Constants.General.kerning)
 			.font(.caption)
 			.bold()
 			.multilineTextAlignment(.center)
@@ -116,16 +116,63 @@ struct RoundedTextView: View{
 	@Binding var text: String
 	
 	var body: some View{
-		Text("hi")
+		Text(text)
+			.bold()
 			.font(.title3)
 			.frame(width: 58, height: 58)
 			.overlay{
 				Circle()
-					.stroke(.leaderboardRow ,lineWidth: 3.0)
+					.stroke(.leaderboardRow ,lineWidth: Constants.General.borderWidth)
 			}
+			.foregroundStyle(.textViews)
 	}
 }
 
+struct RoundedImageViewStroked: View {
+	var systemName: String
+	var body: some View {
+		Image(systemName: systemName)
+			.font(.title)
+			.foregroundStyle(.textViews)
+			.frame(width: Constants.General.roundedViewLenght, height: Constants.General.roundedViewLenght)
+			.overlay(
+				Circle()
+					.strokeBorder(.roundedButton, lineWidth: Constants.General.strokeWidth)
+			)
+	}
+}
+
+struct ScoreText: View{
+	var score: Int
+	var body: some View {
+		Text(String(score))
+			.kerning(Constants.General.kerning)
+			.fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+			.foregroundStyle(.textViews)
+	}
+}
+
+struct DateText: View{
+	var date: Date
+	var body: some View {
+		Text(date, style: .time)
+			.kerning(Constants.General.kerning)
+			.fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+			.foregroundStyle(.textViews)
+
+	}
+}
+
+struct BigBoldText: View {
+	let text: String
+	var body: some View {
+		Text(text.uppercased())
+			.kerning(Constants.General.kerning)
+			.font(.title)
+			.foregroundStyle(.textViews)
+			.bold()
+	}
+}
 
 #Preview{
 	
@@ -137,5 +184,11 @@ struct RoundedTextView: View{
 }
 
 #Preview("RoundedText"){
-	RoundedTextView(text: .constant("si"))
+	VStack{
+		RoundedTextView(text: .constant("1"))
+		ScoreText(score: 12)
+		DateText(date: Date())
+		BigBoldText(text: "leaderboard")
+		RoundedImageViewStroked(systemName: "arrow.clockwise")
+	}
 }
