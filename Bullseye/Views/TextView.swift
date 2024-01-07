@@ -133,12 +133,10 @@ struct RoundedImageViewStroked: View {
 	var body: some View {
 		Image(systemName: systemName)
 			.font(.title)
-			.foregroundStyle(.textViews)
+			.foregroundStyle(.invertedTextViews)
 			.frame(width: Constants.General.roundedViewLenght, height: Constants.General.roundedViewLenght)
-			.overlay(
-				Circle()
-					.strokeBorder(.roundedButton, lineWidth: Constants.General.strokeWidth)
-			)
+			.background(.textViews)
+			.clipShape(Circle())
 	}
 }
 
