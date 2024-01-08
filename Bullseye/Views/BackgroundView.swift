@@ -29,14 +29,22 @@ struct BackgroundView: View {
 
 struct TopView: View {
 	@Binding var game: Game
+	@State var isLeaderboardPresented = false
 	
 	var body: some View {
 		HStack{
 			CounterView(points: $game.score, caption: "Score")
 				.padding()
 			Spacer()
-			IconButton(iconName: "list.bullet" )
-				.padding()
+			Button{
+				isLeaderboardPresented.toggle()
+			} label: {
+				IconButton(iconName: "list.bullet" )
+					.padding()
+					.sheet(isPresented: $isLeaderboardPresented){
+						LeaderBoardView(isLeaderboardPresented: $isLeaderboardPresented)
+					}
+			}
 		}
 	}
 }
