@@ -1,4 +1,4 @@
-//
+///Users/arielmerino/Documents/ios/netflixing/bullseye/Bullseye/BullseyeTests/BullseyeTests.swift
 //  Game.swift
 //  Bullseye
 //
@@ -13,6 +13,18 @@ struct Game {
 	var round: Int = 1
 	var leaderboardEntries: [LeaderBoardEntry] = []
 	
+	
+	init(loadTestData: Bool = false){
+		if loadTestData{
+			addToLeaderboard(score: 100)
+			addToLeaderboard(score: 485)
+			addToLeaderboard(score: 53)
+			addToLeaderboard(score: 5553)
+			addToLeaderboard(score: 554)
+			addToLeaderboard(score: 32)
+		}
+	}
+	
 	func points(sliderValue: Int) -> Int {
 		var resultado = 100 - min(Int(truncating: NSDecimalNumber(decimal: pow(Decimal(abs(sliderValue - target)), 2))), 100)
 		
@@ -24,17 +36,22 @@ struct Game {
 	}
 	
 	mutating func startNewRound(points: Int){
+		addToLeaderboard(score: points)
 		score += points
-		
-		leaderboardEntries.sort{
-			itemA, itemB in
-			itemA.date < itemB.date
-		}
-		
+		// Increase the round value
 		round += 1
+		// Choose randomly the target value
 		target = Int.random(in: 3...97)
 		
 		
+	}
+	
+	mutating func addToLeaderboard(score: Int){
+		leaderboardEntries.append(LeaderBoardEntry(score: score, date: Date()))
+		
+		leaderboardEntries.sort { itemA, itemB in
+			itemA.score > itemB.score
+		}
 	}
 	
 	mutating func restart(){

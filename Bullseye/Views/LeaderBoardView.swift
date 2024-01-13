@@ -9,20 +9,29 @@ import SwiftUI
 
 struct LeaderBoardView: View {
 	@Binding var isLeaderboardPresented: Bool
+	@Binding var game: Game
 	
-    var body: some View {
+	var body: some View {
 		ZStack{
 			Color(.bckgnd)
 				.ignoresSafeArea()
 			VStack(spacing: 10){
 				HeaderView(isLeaderboardPresented: $isLeaderboardPresented)
 				LabelView()
-				RowView(index: 1, score: 10, date: Date())
+				
+				ScrollView {
+					VStack(spacing: 10) {
+						ForEach(game.leaderboardEntries.indices, id: \.self) { index in
+							let leaderboarEntry = game.leaderboardEntries[index]
+							RowView(index: index + 1, score: leaderboarEntry.score, date: leaderboarEntry.date)
+						}
+					}
+				}
 			}
 			.padding()
 		}
 		
-    }
+	}
 }
 
 struct HeaderView: View {
@@ -48,7 +57,6 @@ struct HeaderView: View {
 			}
 			.padding()
 		}
-		.padding()
 	}
 }
 
@@ -64,7 +72,7 @@ struct LabelView: View {
 			Spacer()
 			LabelText(text: "Date")
 				.frame(width: Constants.LeaderBoard.dateColumnWidth)
-		}		
+		}
 		.padding(.horizontal)
 		.frame(maxWidth: Constants.LeaderBoard.maxRowWidth * 0.8)
 	}
@@ -84,44 +92,21 @@ struct RowView: View {
 			Button{
 				isPopOverPresented.toggle()
 			} label: {
-				RoundedTextView(text: .constant("1"))
-					.popover(isPresented: $isPopOverPresented){
-						ZStack{
-							Color(.bckgnd)
-							VStack{
-								if !(horizontalSizeClass == .compact && verticalSizeClass == .regular ){
-									Button{
-										isPopOverPresented.toggle()
-									} label: {
-										RoundedImageViewStroked(systemName: "xmark")
-									}
-								}
-								
-								Text("The position's mark")
-									.font(.callout)
-									.foregroundStyle(.textViews)
-									.padding()
-									.presentationCompactAdaptation(horizontal: .popover
-																   , vertical: .fullScreenCover)
-							}
-						}
-//						.ignoresSafeArea()
-					}
+				RoundedTextView(text: .constant(String(index)))
 			}
 			Spacer()
-			ScoreText(score: 24)
+			ScoreText(score: score)
 				.frame(width: Constants.LeaderBoard.scoreColumnWidth)
 			Spacer()
-			DateText(date: Date())
+			DateText(date: date)
 				.frame(width: Constants.LeaderBoard.dateColumnWidth)
 		}
 		.background(RoundedRectangle(cornerRadius: .infinity).stroke(.leaderboardRow, lineWidth: Constants.General.borderWidth))
+		.frame(maxWidth: Constants.LeaderBoard.maxRowWidth )
 		.padding(.horizontal)
-		.frame(maxWidth: Constants.LeaderBoard.maxRowWidth * 0.8)
 	}
 }
 
-
 #Preview{
-	LeaderBoardView(isLeaderboardPresented: .constant(true))
+	LeaderBoardView(isLeaderboardPresented: .constant(true), game: .constant(Game(loadTestData: true)))
 }

@@ -18,8 +18,8 @@ enum Constants{
 	}
 	
 	enum LeaderBoard{
-		public static let scoreColumnWidth = CGFloat(150)
-		public static let dateColumnWidth = CGFloat(170)
-		public static let maxRowWidth = CGFloat(480)
+		public static let scoreColumnWidth = CGFloat(120)
+		public static let dateColumnWidth = CGFloat(120)
+		public static let maxRowWidth = CGFloat(460)
 	}
 }

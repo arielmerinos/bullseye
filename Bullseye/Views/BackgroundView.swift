@@ -42,7 +42,7 @@ struct TopView: View {
 				IconButton(iconName: "list.bullet" )
 					.padding()
 					.sheet(isPresented: $isLeaderboardPresented){
-						LeaderBoardView(isLeaderboardPresented: $isLeaderboardPresented)
+						LeaderBoardView(isLeaderboardPresented: $isLeaderboardPresented, game: .constant(Game()))
 					}
 			}
 		}
